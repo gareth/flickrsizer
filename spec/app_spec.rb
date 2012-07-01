@@ -12,7 +12,10 @@ describe 'Flickrsizer App' do
     Sinatra::Application
   end
 
-  it "exists" do
-    true
+  it "requires an id parameter" do
+    get '/'
+
+    last_response.should be_a_client_error
+    last_response.body.should == "Missing 'id' parameter"
   end
 end
