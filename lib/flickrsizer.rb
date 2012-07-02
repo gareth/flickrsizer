@@ -1,4 +1,5 @@
 require 'flickraw-cached'
+require 'open-uri'
 
 module Flickrsizer
 
@@ -12,10 +13,26 @@ module Flickrsizer
     suitable_size.source
   end
 
+  def self.file photo_id
+    file_path = file_cache(photo_id)
+    unless File.exists? file_path
+      source = open(source_url(photo_id)).read
+      File.open(file_path, "w") do |f|
+        f << source
+      end
+    end
+    File.open(file_path)
+  end
+
+  private
   def self.flickr
     return @flickr if @flickr
     FlickRaw.api_key = ENV["FLICKR_API_KEY"]
     FlickRaw.shared_secret = ENV["FLICKR_API_SECRET"]
     @flickr = FlickRaw::Flickr.new
+  end
+
+  def self.file_cache photo_id
+    "tmp/photo/%s.jpg" % photo_id
   end
 end
