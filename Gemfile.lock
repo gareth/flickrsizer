@@ -31,6 +31,7 @@ GEM
     rb-fsevent (0.9.1)
     rb-inotify (0.8.8)
       ffi (>= 0.5.0)
+    rmagick (2.13.1)
     rspec (2.10.0)
       rspec-core (~> 2.10.0)
       rspec-expectations (~> 2.10.0)
@@ -57,6 +58,7 @@ DEPENDENCIES
   guard-bundler
   guard-rspec
   rack-test
+  rmagick
   rspec
   sinatra
   vcr

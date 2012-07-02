@@ -36,7 +36,8 @@ describe Flickrsizer do
       end
 
       it "downloads a new copy of the file" do
-        Flickrsizer.should_receive(:open).with("http://farm8.staticflickr.com/7107/7442171028_79e58a5a45.jpg") { mock("IO", :read => "")}
+        pending "remocking, now that file access is made from inside RMagick"
+        Flickrsizer.should_receive(:open).with("http://farm8.staticflickr.com/7107/7442171028_79e58a5a45.jpg") { mock("IO", :read => "") }
         File.should_receive(:open).with("tmp/photo/7442171028.jpg", /w/)
         Flickrsizer.file(7442171028)
       end

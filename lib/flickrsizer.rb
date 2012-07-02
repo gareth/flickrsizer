@@ -1,5 +1,8 @@
 require 'flickraw-cached'
 require 'open-uri'
+require 'RMagick'
+
+require 'digest/sha1'
 
 module Flickrsizer
 
@@ -13,15 +16,27 @@ module Flickrsizer
     suitable_size.source
   end
 
-  def self.file photo_id
-    file_path = file_cache(photo_id)
+  def self.file photo_id, text = nil
+    cache_path = file_cache(photo_id, text)
+    file_path = "tmp/%s" % cache_path
     unless File.exists? file_path
-      source = open(source_url(photo_id)).read
-      File.open(file_path, "w") do |f|
-        f << source
+      image = Magick::Image.read(source_url(photo_id)).first
+      image.scale!(WIDTH, HEIGHT)
+
+      if text
+        txt = Magick::Draw.new
+        image.annotate(txt, 0,0,0,0, text){
+          txt.gravity = Magick::SouthGravity
+          txt.font_weight = Magick::BoldWeight
+          txt.pointsize = 20
+          txt.stroke = '#000000'
+          txt.fill = '#ffffff'
+        }
       end
+
+      image.write(file_path)
     end
-    File.open(file_path)
+    cache_path
   end
 
   private
@@ -32,7 +47,8 @@ module Flickrsizer
     @flickr = FlickRaw::Flickr.new
   end
 
-  def self.file_cache photo_id
-    "tmp/photo/%s.jpg" % photo_id
+  def self.file_cache photo_id, text = nil
+    hash = Digest::SHA1.hexdigest(text) if text
+    "photo/%s%s.jpg" % [photo_id, (".#{hash}" if hash)]
   end
 end

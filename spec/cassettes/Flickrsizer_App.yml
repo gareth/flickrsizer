@@ -1,0 +1,71 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://api.flickr.com/services/rest/
+    body:
+      encoding: US-ASCII
+      string: photo_id=7442171028&method=flickr.photos.getSizes&format=json&nojsoncallback=1
+    headers:
+      accept:
+      - ! '*/*'
+      user-agent:
+      - FlickRaw/0.9.6
+      authorization:
+      - OAuth realm="http://api.flickr.com/services/rest/", oauth_consumer_key="be55f6ec20260efd8dfa61ca4bf3c289",
+        oauth_nonce="yepKKxy%2FeOzQE6LkKGZeWDJ%2BejgbFIgdEDtlaZOHxMg%3D", oauth_signature="8g3VWw0Sgs3yDU9yXyw3vo3lO%2BE%3D",
+        oauth_signature_method="HMAC-SHA1", oauth_timestamp="1341259162", oauth_token="",
+        oauth_version="1.0"
+      content-type:
+      - application/x-www-form-urlencoded
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      date:
+      - Mon, 02 Jul 2012 19:59:23 GMT
+      p3p:
+      - policyref="http://info.yahoo.com/w3c/p3p.xml", CP="CAO DSP COR CUR ADM DEV
+        TAI PSA PSD IVAi IVDi CONi TELo OTPi OUR DELi SAMi OTRi UNRi PUBi IND PHY
+        ONL UNI PUR FIN COM NAV INT DEM CNT STA POL HEA PRE LOC GOV"
+      cache-control:
+      - private
+      x-served-by:
+      - www122.flickr.mud.yahoo.com
+      vary:
+      - Accept-Encoding
+      content-length:
+      - '2357'
+      connection:
+      - close
+      content-type:
+      - application/json
+    body:
+      encoding: US-ASCII
+      string: ! '{"sizes":{"canblog":0, "canprint":0, "candownload":1, "size":[{"label":"Square",
+        "width":75, "height":75, "source":"http:\/\/farm8.staticflickr.com\/7107\/7442171028_79e58a5a45_s.jpg",
+        "url":"http:\/\/www.flickr.com\/photos\/photographydd\/7442171028\/sizes\/sq\/",
+        "media":"photo"}, {"label":"Large Square", "width":"150", "height":"150",
+        "source":"http:\/\/farm8.staticflickr.com\/7107\/7442171028_79e58a5a45_q.jpg",
+        "url":"http:\/\/www.flickr.com\/photos\/photographydd\/7442171028\/sizes\/q\/",
+        "media":"photo"}, {"label":"Thumbnail", "width":"100", "height":"67", "source":"http:\/\/farm8.staticflickr.com\/7107\/7442171028_79e58a5a45_t.jpg",
+        "url":"http:\/\/www.flickr.com\/photos\/photographydd\/7442171028\/sizes\/t\/",
+        "media":"photo"}, {"label":"Small", "width":"240", "height":"161", "source":"http:\/\/farm8.staticflickr.com\/7107\/7442171028_79e58a5a45_m.jpg",
+        "url":"http:\/\/www.flickr.com\/photos\/photographydd\/7442171028\/sizes\/s\/",
+        "media":"photo"}, {"label":"Small 320", "width":"320", "height":215, "source":"http:\/\/farm8.staticflickr.com\/7107\/7442171028_79e58a5a45_n.jpg",
+        "url":"http:\/\/www.flickr.com\/photos\/photographydd\/7442171028\/sizes\/n\/",
+        "media":"photo"}, {"label":"Medium", "width":"500", "height":"335", "source":"http:\/\/farm8.staticflickr.com\/7107\/7442171028_79e58a5a45.jpg",
+        "url":"http:\/\/www.flickr.com\/photos\/photographydd\/7442171028\/sizes\/m\/",
+        "media":"photo"}, {"label":"Medium 640", "width":"640", "height":"429", "source":"http:\/\/farm8.staticflickr.com\/7107\/7442171028_79e58a5a45_z.jpg",
+        "url":"http:\/\/www.flickr.com\/photos\/photographydd\/7442171028\/sizes\/z\/",
+        "media":"photo"}, {"label":"Medium 800", "width":"800", "height":537, "source":"http:\/\/farm8.staticflickr.com\/7107\/7442171028_79e58a5a45_c.jpg",
+        "url":"http:\/\/www.flickr.com\/photos\/photographydd\/7442171028\/sizes\/c\/",
+        "media":"photo"}, {"label":"Large", "width":"1024", "height":"687", "source":"http:\/\/farm8.staticflickr.com\/7107\/7442171028_79e58a5a45_b.jpg",
+        "url":"http:\/\/www.flickr.com\/photos\/photographydd\/7442171028\/sizes\/l\/",
+        "media":"photo"}, {"label":"Original", "width":"1491", "height":"1000", "source":"http:\/\/farm8.staticflickr.com\/7107\/7442171028_56bbbb1809_o.jpg",
+        "url":"http:\/\/www.flickr.com\/photos\/photographydd\/7442171028\/sizes\/o\/",
+        "media":"photo"}]}, "stat":"ok"}'
+    http_version: '1.1'
+  recorded_at: Mon, 02 Jul 2012 19:59:23 GMT
+recorded_with: VCR 2.2.2

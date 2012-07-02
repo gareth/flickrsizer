@@ -4,6 +4,8 @@ gem 'sinatra'
 
 gem 'flickraw-cached'
 
+gem 'rmagick'
+
 group :development do
   gem 'foreman'
 end
