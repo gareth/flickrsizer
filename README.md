@@ -17,12 +17,12 @@ Flickrsizer uses Bundler to manage its dependencies.
     $ gem install bundler
     $ bundle install
 
-Flickrsizer uses Foreman to manage its environment. Environment variables defined in a +.env+ file will automatically be loaded into the application by Foreman. The +.env.sample+ file defines the environment variables used by this application, use this to build your own +.env+ file
+Flickrsizer uses Foreman to manage its environment. Environment variables defined in a `.env` file will automatically be loaded into the application by Foreman. The `.env.sample` file defines the environment variables used by this application, use this to build your own `.env` file
 
 Usage
 =====
 
-Flickrsizer can be started using foreman with the included +Procfile+
+Flickrsizer can be started using foreman with the included `Procfile`
 
     $ foreman start
 
@@ -30,7 +30,7 @@ Access the API by visiting a URL corresponsing to a Flickr photo ID:
 
     http://localhost:5000/7442171028
 
-You can also add a +text+ HTTP query string parameter to have text overlayed on the image:
+You can also add a `text` HTTP query string parameter to have text overlayed on the image:
 
     http://localhost:5000/7442171028?text=MOOOOOOOOO!
 
